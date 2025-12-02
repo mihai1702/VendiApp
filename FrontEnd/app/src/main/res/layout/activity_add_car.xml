@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    tools:layout_editor_absoluteX="0dp"
+    tools:layout_editor_absoluteY="61dp">
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="69dp"
+        android:background="#495d92"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:fontFamily="sans-serif-black"
+            android:gravity="center_vertical"
+            android:text="Add Car"
+            android:textAlignment="center"
+            android:textColor="#fff"
+            android:textSize="18sp"
+            android:typeface="normal" />
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/titleEditText"
+        android:layout_width="407dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="15dp"
+        android:hint="Title"
+        app:layout_constraintBottom_toTopOf="@+id/descriptionEditText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
+
+    <EditText
+        android:id="@+id/descriptionEditText"
+        android:layout_width="0dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="15dp"
+        android:hint="Description"
+        app:layout_constraintBottom_toTopOf="@+id/priceEditText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titleEditText" />
+
+    <EditText
+        android:id="@+id/priceEditText"
+        android:layout_width="0dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="15dp"
+        android:hint="Price"
+        app:layout_constraintBottom_toTopOf="@+id/phoneEditText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/descriptionEditText" />
+
+    <EditText
+        android:id="@+id/phoneEditText"
+        android:layout_width="0dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="15dp"
+        android:hint="Phone"
+        app:layout_constraintBottom_toTopOf="@+id/sellerEditText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/priceEditText" />
+
+    <EditText
+        android:id="@+id/sellerEditText"
+        android:layout_width="0dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="15dp"
+        android:hint="Seller"
+        app:layout_constraintBottom_toTopOf="@+id/locationEditText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/phoneEditText" />
+
+    <EditText
+        android:id="@+id/locationEditText"
+        android:layout_width="0dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="15dp"
+        android:hint="Location"
+        app:layout_constraintBottom_toTopOf="@+id/uploadButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sellerEditText" />
+
+    <Button
+        android:id="@+id/uploadButton"
+        android:layout_width="154dp"
+        android:layout_height="53dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="203dp"
+        android:backgroundTint="#495D92"
+        android:text="Upload Image"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/submitButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/locationEditText" />
+
+    <Button
+        android:id="@+id/submitButton"
+        android:layout_width="154dp"
+        android:layout_height="53dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="203dp"
+        android:backgroundTint="#495d92"
+        android:text="Submit"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/uploadButton"
+        app:layout_constraintTop_toBottomOf="@+id/locationEditText" />
+</androidx.constraintlayout.widget.ConstraintLayout>
