@@ -1,26 +1,21 @@
+import os
+import shutil
+
 from starlette.staticfiles import StaticFiles
 
 BACKEND_URL = "http://10.0.2.2:8000"  # Pentru emulator Android
 
 from typing import List
 
-from fastapi import FastAPI
+from fastapi import FastAPI, Form, UploadFile, File
 
-from database_connection import connect_to_db
+from database_connection import connect_to_db, add_car_to_db
 
 app = FastAPI()
 
 app.mount("/images", StaticFiles(directory="images"), name="images")
 
 connect_to_db()
-@app.get("/")
-async def root():
-    return {"message": "Hello World"}
-
-
-@app.get("/hello/{name}")
-async def say_hello(name: str):
-    return {"message": f"Hello {name}"}
 
 def get_all_listings():
     try:
@@ -47,6 +42,7 @@ def get_all_listings():
                     'sellerName': row[6],
                     'location': row[7]
                 }
+
                 listings.append(listing)
 
             return listings
@@ -61,3 +57,28 @@ def get_all_listings():
 async def read_listings():
     listings = get_all_listings()
     return listings
+
+UPLOAD_FOLDER = "./images/"
+@app.post("/addcar")
+async def add_car(
+        title: str = Form(...),
+        description: str = Form(...),
+        price: float = Form(...),
+        phone: str = Form(...),
+        seller: str = Form(...),
+        location: str = Form(...),
+        image: UploadFile = File(...)
+):
+    image_filename = image.filename
+    image_path = os.path.join(UPLOAD_FOLDER, image_filename)
+
+    with open(image_path, "wb") as buffer:
+        shutil.copyfileobj(image.file, buffer)
+
+    photoLink = image_filename
+
+    add_car_to_db(title, description, price, photoLink, phone, seller, location)
+
+    return {"message": "Anunțul a fost adăugat cu succes!"}
+
+
