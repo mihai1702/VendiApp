@@ -18,8 +18,8 @@ Proiectul este în dezvoltare și reprezintă baza unui sistem complet de postar
 - Liste produse, detalii, ecrane UI  
 
 ### Backend (Python)
-- API REST (FastAPI / Flask)  
+- API REST (FastAPI)  
 - Manipularea datelor: produse, utilizatori  
-- Conectare la MySQL (sau alt RDBMS)  
+- Conectare la MySQL
 
 ---
