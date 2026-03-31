@@ -1,11 +1,11 @@
 # VendiApp
 
 ## Descriere
-VendiApp este o aplicație de tip marketplace (gen OLX), împărțită în două componente principale:
+VendiApp este o aplicație mobila Android de tip marketplace (gen OLX), unde se pot lista anunturi de vanzare a autovehiculelor. 
+
+Este împărțită în două componente principale:
 - **FrontEnd** – aplicație Android scrisă în Java  
 - **Backend** – API Python pentru gestionarea anunțurilor și comunicarea cu aplicația mobilă  
-
-Proiectul este în dezvoltare și reprezintă baza unui sistem complet de postare și administrare anunțuri.
 
 ---
 
